@@ -7,6 +7,7 @@ Module::Build->new(
     'dist_author'       => 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>', 
     'dist_version_from' => 'lib/Devel/SimpleTrace.pm', 
     'requires' => {
+        'Data::Dumper' => 0, 
     }, 
     'add_to_cleanup'    => [ 'Devel-SimpleTrace-*' ],
 )->create_build_script;
