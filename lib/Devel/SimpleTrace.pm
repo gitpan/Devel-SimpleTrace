@@ -2,7 +2,7 @@ package Devel::SimpleTrace;
 use strict;
 
 { no strict;
-  $VERSION = '0.05';
+  $VERSION = '0.06';
 }
 
 # Install warn() and die() substitutes
@@ -135,7 +135,7 @@ Devel::SimpleTrace - See where you code warns and dies using stack traces
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =head1 SYNOPSIS
 
@@ -175,7 +175,7 @@ Available options are:
 
 =over 4
 
-=item showrefs
+=item C<showrefs>
 
 Using this option will tell C<Devel::SimpleTrace> to stringify objects and 
 references passed in argument to C<die()>. This option is disabled by default 
@@ -230,7 +230,7 @@ B<(W)> This warning occurs if you try to set an unknown option.
 =back
 
 
-=head1 BUGS & CAVEATS
+=head1 CAVEATS
 
 This module is currently not compatible with other modules that also 
 work by overriding C<die()> and C<warn()>, like C<CGI::Carp>. 
@@ -242,7 +242,7 @@ SE<eacute>bastien Aperghis-Tramoni E<lt>sebastien@aperghis.netE<gt>
 
 
 =head1 BUGS
-    
+
 Please report any bugs or feature requests to
 C<bug-Devel-SimpleTrace@rt.cpan.org>, or through the web interface at
 L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=Devel-SimpleTrace>.
