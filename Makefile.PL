@@ -1,15 +1,22 @@
-#!/usr/bin/perl
 use strict;
 use ExtUtils::MakeMaker;
 eval 'use ExtUtils::MakeMaker::Coverage';
+
 WriteMakefile (
-    'NAME' => 'Devel::SimpleTrace', 
-    'VERSION_FROM' => 'lib/Devel/SimpleTrace.pm', 
-    'PREREQ_PM' => {
-        'Data::Dumper' => 0, 
+    NAME                => 'Devel::SimpleTrace', 
+    LICENSE             => 'perl',
+    AUTHOR              => 'Sebastien Aperghis-Tramoni <sebastien@aperghis.net>',
+    VERSION_FROM        => 'lib/Devel/SimpleTrace.pm', 
+    ABSTRACT_FROM       => 'lib/Devel/SimpleTrace.pm', 
+    PREREQ_PM           => {
+        # prereqs
+        'Data::Dumper'  => 0, 
+
+        # build/test prereqs
+        'Test'          => 0,
+        'Test::More'    => 0,
     }, 
-    'PL_FILES' => {}, 
-    ($] >= 5.005 ?
-      (ABSTRACT_FROM => 'lib/Devel/SimpleTrace.pm', 
-       AUTHOR => 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>') : ()),
+    PL_FILES            => {}, 
+    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+    clean               => { FILES => 'Devel-SimpleTrace-*' },
 );

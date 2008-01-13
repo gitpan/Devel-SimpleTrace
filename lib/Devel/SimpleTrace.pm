@@ -2,7 +2,7 @@ package Devel::SimpleTrace;
 use strict;
 
 { no strict;
-  $VERSION = '0.06';
+  $VERSION = '0.07';
 }
 
 # Install warn() and die() substitutes
@@ -135,7 +135,7 @@ Devel::SimpleTrace - See where you code warns and dies using stack traces
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =head1 SYNOPSIS
 
