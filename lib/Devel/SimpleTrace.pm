@@ -1,8 +1,9 @@
 package Devel::SimpleTrace;
 use strict;
 
-{ no strict;
-  $VERSION = '0.07';
+{
+    no strict;
+    $VERSION = '0.08';
 }
 
 # Install warn() and die() substitutes
@@ -39,8 +40,9 @@ sub _use_data_dumper {
     $Data::Dumper::Terse  = 1;      # don't use $VAR unless needed
     $Data::Dumper::Sortkeys = 1;    # sort keys
     #$Data::Dumper::Deparse = 1;     # deparse code refs
-    { local $^W = 0; 
-      *Devel::SimpleTrace::_use_data_dumper = sub {};
+    {
+        local $^W = 0; 
+        *Devel::SimpleTrace::_use_data_dumper = sub {};
     }
 }
 
@@ -52,7 +54,7 @@ sub _do_warn {
     local $SIG{'__WARN__'} = 'DEFAULT';
     
     my $msg = join '', @_;
-    $msg =~ s/ at (.+) line (\d+)\.$//;
+    $msg =~ s/ at (.+?) line (\d+)\.$//;
     $stderr .= $msg;
     $stderr .= "\n" if substr($msg, -1, 1) ne "\n";
     
@@ -77,7 +79,7 @@ sub _do_die {
     
     _use_data_dumper() if ref $args[0];
     my $msg = join '', map { ref $_ ? "Caught exception object: $_\: ".Dumper($_) : $_ } @args;
-    $msg =~ s/ at (.+) line (\d+)\.$//;
+    $msg =~ s/ at (.+?) line (\d+)\.$//;
     $stderr .= $msg;
     $stderr .= "\n" if substr($msg, -1, 1) ne "\n";
     
@@ -135,7 +137,7 @@ Devel::SimpleTrace - See where you code warns and dies using stack traces
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =head1 SYNOPSIS
 
@@ -245,14 +247,14 @@ SE<eacute>bastien Aperghis-Tramoni E<lt>sebastien@aperghis.netE<gt>
 
 Please report any bugs or feature requests to
 C<bug-Devel-SimpleTrace@rt.cpan.org>, or through the web interface at
-L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=Devel-SimpleTrace>.
+L<https://rt.cpan.org/Public/Dist/Display.html?Name=Devel-SimpleTrace>.
 I will be notified, and then you'll automatically be notified of
 progress on your bug as I make changes.
 
 
 =head1 COPYRIGHT & LICENSE
 
-Devel::SimpleTrace is Copyright (C)2004, 2005 SE<eacute>bastien Aperghis-Tramoni.
+Devel::SimpleTrace is Copyright (C)2004-2011 SE<eacute>bastien Aperghis-Tramoni.
 
 This program is free software. You can redistribute it and/or modify it 
 under the same terms as Perl itself. 

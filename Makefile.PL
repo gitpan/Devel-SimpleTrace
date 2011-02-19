@@ -5,7 +5,7 @@ eval 'use ExtUtils::MakeMaker::Coverage';
 WriteMakefile (
     NAME                => 'Devel::SimpleTrace', 
     LICENSE             => 'perl',
-    AUTHOR              => 'Sebastien Aperghis-Tramoni <sebastien@aperghis.net>',
+    AUTHOR              => 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>',
     VERSION_FROM        => 'lib/Devel/SimpleTrace.pm', 
     ABSTRACT_FROM       => 'lib/Devel/SimpleTrace.pm', 
     PREREQ_PM           => {

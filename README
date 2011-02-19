@@ -1,8 +1,10 @@
 NAME
+
     Devel::SimpleTrace - See where you code warns and dies using stack traces
 
 
 DESCRIPTION
+
     This module can be used to more easily spot the place where a program or
     a module generates errors. Its use is extremely simple, you just need to
     load it.
@@ -34,7 +36,7 @@ INSTALLATION
 
 COPYRIGHT AND LICENCE
 
-    Copyright (C) 2004, 2005 Sébastien Aperghis-Tramoni <sebastien@aperghis.net>
+    Copyright (C) 2004-2011 SÃ©bastien Aperghis-Tramoni <sebastien@aperghis.net>
 
     This library is free software; you can redistribute it and/or modify
     it under the same terms as Perl itself.
